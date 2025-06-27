@@ -3,20 +3,29 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\DBController;
 
-// POST
-Route::post('/usuarios', [UsuarioController::class, 'store']); // insert user
+//UsuarioController
+    // POST
+    Route::post('/usuarios', [UsuarioController::class, 'store']); // insert user
 
-// GET
-Route::get('/usuarios', [UsuarioController::class, 'index']); // search all users
+    // GET
+    Route::get('/usuarios', [UsuarioController::class, 'index']); // search all users
 
-Route::get('/usuarios/{id}', [UsuarioController::class, 'show']); // search user for id
+    Route::get('/usuarios/{id}', [UsuarioController::class, 'show']); // search user for id
 
-Route::get('/usuarios/email/{email}', [UsuarioController::class, 'buscarPorEmail']); // search user for email
+    Route::get('/usuarios/email/{email}', [UsuarioController::class, 'buscarPorEmail']); // search user for email
 
-//PUT
-Route::put('/usuarios/{id}', [UsuarioController::class, 'update']); // update data for user
+    //PUT
+    Route::put('/usuarios/{id}', [UsuarioController::class, 'update']); // update data for user
 
-//DELETE
-Route::delete('/usuarios/{id}', [UsuarioController::class, 'delete']); // delete data for user
+    //DELETE
+    Route::delete('/usuarios/{id}', [UsuarioController::class, 'delete']); // delete data for user
+
+//DBController
+    // GET
+    Route::get('/usuariosAsc', [DBController::class, 'indexAsc']); // search all users
+
+    Route::get('/usuariosDesc', [DBController::class, 'indexDesc']); // search all users
+
 
